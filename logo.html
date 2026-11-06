@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trazo Estudio · Diseño de logos para empresas</title>
+<meta name="description" content="Diseñamos logotipos e identidad visual para empresas y negocios locales. Entrega en 10 días, archivos completos y manual de uso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#F5F7F8; --tinta:#0F1E3D; --azul:#2447D6; --senal:#FFC93C;
+  --gris:#556070; --linea:#D5DBE1; --blanco:#fff;
+  --display:'Bricolage Grotesque',Georgia,sans-serif;
+  --texto:'Public Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--texto);background:var(--papel);color:var(--tinta);line-height:1.6;font-size:17px}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;max-width:18ch}
+.sec{padding:clamp(64px,9vw,112px) 0}
+.lead{color:var(--gris);max-width:56ch;margin-top:16px}
+
+/* Botones */
+.btn{display:inline-block;padding:14px 26px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--tinta);transition:transform .15s,background .15s;cursor:pointer;font:600 1rem var(--texto)}
+.btn-p{background:var(--tinta);color:var(--blanco)}
+.btn-p:hover{background:var(--azul);border-color:var(--azul)}
+.btn-s{background:transparent;color:var(--tinta)}
+.btn-s:hover{background:var(--tinta);color:var(--blanco)}
+
+/* Cabecera */
+header{position:sticky;top:0;z-index:20;background:rgba(245,247,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font:800 1.3rem var(--display);text-decoration:none}
+.nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+.nav ul a{text-decoration:none;font-weight:500}
+.nav ul a:hover{color:var(--azul)}
+.burger{display:none;background:none;border:2px solid var(--tinta);border-radius:6px;padding:8px 12px;font:600 .95rem var(--texto);cursor:pointer}
+
+/* Hero */
+.hero{padding:clamp(48px,7vw,96px) 0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,6vw,4.6rem);font-weight:800}
+.hero p{font-size:1.15rem;color:var(--gris);margin:22px 0 32px;max-width:48ch}
+.acciones{display:flex;gap:14px;flex-wrap:wrap}
+.pruebas{display:flex;gap:36px;margin-top:44px;padding-top:24px;border-top:1px solid var(--linea)}
+.pruebas strong{display:block;font:800 1.6rem var(--display)}
+.pruebas span{font-size:.92rem;color:var(--gris)}
+.lamina{background:var(--blanco);border:1px solid var(--linea);border-radius:10px;padding:18px}
+.lamina figcaption{font-size:.85rem;color:var(--gris);margin-top:10px;text-align:center}
+.guia{stroke:var(--azul);stroke-width:1;fill:none;stroke-dasharray:4 5;opacity:.55}
+.dibujo{stroke-dasharray:900;stroke-dashoffset:900;animation:trazar 2.4s ease-out .3s forwards}
+@keyframes trazar{to{stroke-dashoffset:0}}
+
+/* Servicios */
+.paquetes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.paq{background:var(--blanco);border:1px solid var(--linea);border-radius:10px;padding:32px;display:flex;flex-direction:column}
+.paq.dest{background:var(--tinta);color:var(--blanco);border-color:var(--tinta)}
+.paq h3{font-size:1.5rem;font-weight:700}
+.precio{font:800 2.4rem var(--display);margin:14px 0 4px}
+.precio small{font:500 .95rem var(--texto);opacity:.7}
+.paq ul{list-style:none;margin:20px 0 28px;flex:1}
+.paq li{padding:9px 0 9px 28px;position:relative;border-top:1px solid var(--linea)}
+.paq.dest li{border-color:rgba(255,255,255,.2)}
+.paq li::before{content:"";position:absolute;left:0;top:17px;width:14px;height:8px;border-left:3px solid var(--azul);border-bottom:3px solid var(--azul);transform:rotate(-45deg)}
+.paq.dest li::before{border-color:var(--senal)}
+.paq.dest .btn{background:var(--senal);border-color:var(--senal);color:var(--tinta)}
+
+/* Proceso */
+.proceso{background:var(--tinta);color:var(--blanco)}
+.proceso .lead{color:#B9C3D4}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px;list-style:none;counter-reset:p}
+.pasos li{counter-increment:p;border-top:3px solid var(--senal);padding-top:18px}
+.pasos li::before{content:counter(p);font:800 1.1rem var(--display);color:var(--senal)}
+.pasos h3{font-size:1.25rem;margin:6px 0 8px}
+.pasos p{color:#B9C3D4;font-size:.97rem}
+
+/* Portafolio */
+.galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.marca{background:var(--blanco);border:1px solid var(--linea);border-radius:10px;overflow:hidden}
+.marca .lienzo{aspect-ratio:4/3;display:grid;place-items:center}
+.marca p{padding:14px 18px;border-top:1px solid var(--linea);font-size:.95rem}
+.marca b{font-family:var(--display)}
+.marca span{color:var(--gris)}
+
+/* Contacto */
+.contacto .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.datos{margin-top:28px;list-style:none}
+.datos li{padding:12px 0;border-top:1px solid var(--linea)}
+.datos b{display:block;font-size:.9rem;color:var(--gris);font-weight:500}
+form{background:var(--blanco);border:1px solid var(--linea);border-radius:10px;padding:32px;display:grid;gap:18px}
+label{font-weight:600;font-size:.95rem;display:grid;gap:6px}
+input,select,textarea{font:400 1rem var(--texto);padding:12px 14px;border:1.5px solid var(--linea);border-radius:6px;background:var(--papel);color:var(--tinta);width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--azul);outline:none;box-shadow:0 0 0 3px rgba(36,71,214,.2)}
+textarea{min-height:120px;resize:vertical}
+#estado{font-weight:600;min-height:1.4em}
+
+footer{border-top:1px solid var(--linea);padding:28px 0;font-size:.92rem;color:var(--gris)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero .wrap,.contacto .wrap{grid-template-columns:1fr}
+  .paquetes,.galeria{grid-template-columns:1fr}
+  .pasos{grid-template-columns:1fr 1fr}
+  .burger{display:block}
+  .nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:var(--papel);flex-direction:column;padding:20px 4%;gap:18px;border-bottom:1px solid var(--linea);align-items:flex-start}
+  .nav ul.abierto{display:flex}
+}
+@media(max-width:520px){.pasos{grid-template-columns:1fr}.pruebas{gap:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dibujo{animation:none;stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#inicio" aria-label="Trazo Estudio, inicio">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#0F1E3D"/><path d="M8 10h14M15 10v12" stroke="#FFC93C" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg>
+      Trazo Estudio
+    </a>
+    <button class="burger" aria-expanded="false" aria-controls="menu">Menú</button>
+    <ul id="menu">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#trabajos">Trabajos</a></li>
+      <li><a class="btn btn-p" href="#contacto">Pedir presupuesto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Un logo que tu negocio pueda usar durante años.</h1>
+        <p>Diseñamos logotipos e identidad visual para empresas de [Tu ciudad]. Del primer boceto a los archivos listos para rótulos, web y redes.</p>
+        <div class="acciones">
+          <a class="btn btn-p" href="#contacto">Pedir presupuesto</a>
+          <a class="btn btn-s" href="#trabajos">Ver trabajos</a>
+        </div>
+        <div class="pruebas">
+          <div><strong>120+</strong><span>logos entregados</span></div>
+          <div><strong>10 días</strong><span>plazo de entrega</span></div>
+          <div><strong>3 rondas</strong><span>de cambios incluidas</span></div>
+        </div>
+      </div>
+      <figure class="lamina">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Construcción de un logotipo con círculos y líneas guía">
+          <circle class="guia" cx="200" cy="200" r="150"/>
+          <circle class="guia" cx="200" cy="200" r="93"/>
+          <line class="guia" x1="30" y1="200" x2="370" y2="200"/>
+          <line class="guia" x1="200" y1="30" x2="200" y2="370"/>
+          <line class="guia" x1="60" y1="60" x2="340" y2="340"/>
+          <path class="dibujo" d="M130 150h140M200 150v125" fill="none" stroke="#0F1E3D" stroke-width="34" stroke-linecap="round"/>
+          <circle cx="270" cy="275" r="22" fill="#FFC93C"/>
+          <rect x="196" y="196" width="8" height="8" fill="#2447D6"/>
+        </svg>
+        <figcaption>Cada marca se construye sobre una retícula, no a ojo.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="servicios">
+    <div class="wrap">
+      <h2>Elige lo que tu empresa necesita</h2>
+      <p class="lead">Precios cerrados, sin sorpresas. Si no encaja ninguno, te preparamos una propuesta a medida.</p>
+      <div class="paquetes">
+        <article class="paq">
+          <h3>Logo</h3>
+          <div class="precio">90 €<small> + IVA</small></div>
+          <p>Para autónomos y negocios que empiezan.</p>
+          <ul>
+            <li>2 propuestas de logotipo</li>
+            <li>3 rondas de cambios</li>
+            <li>Archivos PNG, SVG y PDF</li>
+            <li>Versión color y blanco/negro</li>
+          </ul>
+          <a class="btn btn-s" href="#contacto">Elegir Logo</a>
+        </article>
+        <article class="paq dest">
+          <h3>Identidad</h3>
+          <div class="precio">190 €<small> + IVA</small></div>
+          <p>El más elegido por pymes y comercios.</p>
+          <ul>
+            <li>3 propuestas de logotipo</li>
+            <li>Paleta de color y tipografías</li>
+            <li>Papelería: tarjeta, sobre y firma de email</li>
+            <li>Manual de marca de 8 páginas</li>
+          </ul>
+          <a class="btn" href="#contacto">Elegir Identidad</a>
+        </article>
+        <article class="paq">
+          <h3>Marca completa</h3>
+          <div class="precio">390 €<small> + IVA</small></div>
+          <p>Para empresas que se renuevan o crecen.</p>
+          <ul>
+            <li>Todo lo de Identidad</li>
+            <li>Rotulación y vehículos</li>
+            <li>Plantillas para redes sociales</li>
+            <li>Manual de marca completo</li>
+          </ul>
+          <a class="btn btn-s" href="#contacto">Elegir Marca completa</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec proceso" id="proceso">
+    <div class="wrap">
+      <h2>Cómo trabajamos, paso a paso</h2>
+      <p class="lead">Sabrás en qué punto estamos en todo momento.</p>
+      <ol class="pasos">
+        <li><h3>Reunión</h3><p>Hablamos de tu negocio, tus clientes y tu competencia. Dura unos 45 minutos.</p></li>
+        <li><h3>Propuestas</h3><p>En 5 días recibes las primeras ideas con ejemplos sobre rótulo, web y redes.</p></li>
+        <li><h3>Ajustes</h3><p>Afinamos la propuesta elegida hasta que estés conforme.</p></li>
+        <li><h3>Entrega</h3><p>Recibes todos los archivos y el manual de uso. Los derechos son tuyos.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="trabajos">
+    <div class="wrap">
+      <h2>Marcas que ya trabajan con nosotros</h2>
+      <p class="lead">Ejemplos de ficción. Sustituye cada tarjeta por tus proyectos reales.</p>
+      <div class="galeria">
+        <div class="marca"><div class="lienzo" style="background:#E8EEFF"><svg width="110" height="110" viewBox="0 0 110 110" aria-hidden="true"><circle cx="55" cy="55" r="46" fill="#2447D6"/><path d="M30 62c10-24 20-24 25-8s15 16 25-8" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round"/></svg></div><p><b>Olas Fisioterapia</b><br><span>Salud · Identidad completa</span></p></div>
+        <div class="marca"><div class="lienzo" style="background:#FFF4D1"><svg width="110" height="110" viewBox="0 0 110 110" aria-hidden="true"><rect x="12" y="12" width="86" height="86" rx="14" fill="#0F1E3D"/><path d="M34 74V36h20a14 14 0 010 28H34" stroke="#FFC93C" stroke-width="9" fill="none" stroke-linejoin="round"/></svg></div><p><b>Panadería Pardo</b><br><span>Alimentación · Logo y rótulo</span></p></div>
+        <div class="marca"><div class="lienzo" style="background:#E6F4EC"><svg width="110" height="110" viewBox="0 0 110 110" aria-hidden="true"><path d="M55 14L96 92H14z" fill="#1E8A55"/><path d="M55 44L75 82H35z" fill="#E6F4EC"/></svg></div><p><b>Monte Gestión</b><br><span>Asesoría · Identidad</span></p></div>
+        <div class="marca"><div class="lienzo" style="background:#FDE8E4"><svg width="110" height="110" viewBox="0 0 110 110" aria-hidden="true"><circle cx="42" cy="55" r="30" fill="#E2503A"/><circle cx="68" cy="55" r="30" fill="#0F1E3D" fill-opacity=".85"/></svg></div><p><b>Dúo Reformas</b><br><span>Construcción · Logo y vehículos</span></p></div>
+        <div class="marca"><div class="lienzo" style="background:#EEE9F8"><svg width="110" height="110" viewBox="0 0 110 110" aria-hidden="true"><path d="M20 90V30l35 30 35-30v60" stroke="#5B3FC4" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg></div><p><b>Mira Estudio Legal</b><br><span>Abogados · Identidad</span></p></div>
+        <div class="marca"><div class="lienzo" style="background:#E3F3F7"><svg width="110" height="110" viewBox="0 0 110 110" aria-hidden="true"><circle cx="55" cy="55" r="44" fill="none" stroke="#0E7C94" stroke-width="10"/><circle cx="55" cy="55" r="16" fill="#0E7C94"/></svg></div><p><b>Foco Óptica</b><br><span>Comercio · Logo y packaging</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec contacto" id="contacto" style="background:var(--blanco);border-top:1px solid var(--linea)">
+    <div class="wrap">
+      <div>
+        <h2>Cuéntanos qué necesitas</h2>
+        <p class="lead">Respondemos en menos de 24 horas laborables con una propuesta y un plazo.</p>
+        <ul class="datos">
+          <li><b>Teléfono</b><a href="tel:+34000000000">+34 000 000 000</a></li>
+          <li><b>Email</b><a href="mailto:hola@trazoestudio.es">hola@trazoestudio.es</a></li>
+          <li><b>Estudio</b>Calle Ejemplo 12, [Tu ciudad]</li>
+          <li><b>Horario</b>Lunes a viernes, 9:00 a 18:00</li>
+        </ul>
+      </div>
+      <form id="form" novalidate>
+        <label>Nombre<input name="nombre" required autocomplete="name"></label>
+        <label>Email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Servicio
+          <select name="servicio">
+            <option>Logo</option><option>Identidad</option><option>Marca completa</option><option>Todavía no lo sé</option>
+          </select>
+        </label>
+        <label>Sobre tu negocio<textarea name="mensaje" required></textarea></label>
+        <button class="btn btn-p" type="submit">Enviar solicitud</button>
+        <p id="estado" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Trazo Estudio. Todos los derechos reservados.</span>
+    <span><a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a></span>
+  </div>
+</footer>
+
+<script>
+  // Menú móvil
+  const burger = document.querySelector('.burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', () => {
+    const abierto = menu.classList.toggle('abierto');
+    burger.setAttribute('aria-expanded', abierto);
+  });
+  menu.addEventListener('click', e => { if (e.target.tagName === 'A') menu.classList.remove('abierto'); });
+
+  // Formulario: validación básica.
+  // Para recibir los mensajes, sustituye el bloque "simulado" por un fetch a tu servicio
+  // (por ejemplo Formspree: https://formspree.io) o a tu propio backend.
+  document.getElementById('form').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target, estado = document.getElementById('estado');
+    if (!f.nombre.value.trim() || !f.email.checkValidity() || !f.email.value || !f.mensaje.value.trim()) {
+      estado.style.color = '#B3261E';
+      estado.textContent = 'Revisa el nombre, el email y el mensaje.';
+      return;
+    }
+    // simulado
+    estado.style.color = '#1E8A55';
+    estado.textContent = 'Solicitud enviada. Te respondemos en menos de 24 horas.';
+    f.reset();
+  });
+</script>
+</body>
+</html>
